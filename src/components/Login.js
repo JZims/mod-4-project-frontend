@@ -1,10 +1,14 @@
 import React, { useState } from 'react'
+import Signup from './Signup'
 import { Link, useHistory } from 'react-router-dom'
 import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
+
+
 
 function Login({setUserData, setIsLoggedIn}) {
   const[userNameInput, setUserNameInput] = useState("")
   const[passwordInput, setPasswordInput] = useState("")
+  const[showCreateUser, setShowCreateUser] = useState(false)
 
   const history = useHistory()
 
@@ -26,7 +30,7 @@ function Login({setUserData, setIsLoggedIn}) {
    .then(r => r.json())
    .then(r => {
     localStorage.token = r.jwt
-    setUserData(r.user)
+    
     if (r.user) {
       setIsLoggedIn(prevState => !prevState)
     } else { 
@@ -36,12 +40,16 @@ function Login({setUserData, setIsLoggedIn}) {
     setUserData(r.user)
     history.push('/mypets')
     })
-   
-
 
 }
 
+function handleSignup(){
+  setShowCreateUser(prevState => !prevState)
+}
+
     return (
+    <>
+    { showCreateUser ?  <Signup setUserData={setUserData} handleSignup={handleSignup}/> :
         <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
         <Grid.Column style={{ maxWidth: 450 }}>
           <Header as='h2' color='green' textAlign='center'>
@@ -72,10 +80,13 @@ function Login({setUserData, setIsLoggedIn}) {
             </Segment>
           </Form>
           <Message>
-            <Link to="/signup">New to us? Sign up here!</Link>
+            <Button color='green' fluid size='large' onClick={handleSignup}> New to us? Sign up here!</Button>
           </Message>
         </Grid.Column>
-      </Grid>
+       </Grid>
+        }
+       
+     </>
     )
 }
 

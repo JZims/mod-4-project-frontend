@@ -2,7 +2,6 @@ import { Switch, Route } from 'react-router-dom'
 import React , { useState } from 'react'
 import Login from "./Login"
 import Header from "./Header"
-import Signup from './Signup'
 import Welcome from './Welcome'
 import MyPets from './MyPets'
 
@@ -24,9 +23,9 @@ function App() {
         <Route exact path="/login">
           <Login setUserData={ setUserData } setIsLoggedIn= { setIsLoggedIn }/>
         </Route>
-        <Route exact path="/signup">
+        {/* <Route exact path="/signup">
           <Signup setUserData={ setUserData } setIsLoggedIn= { setIsLoggedIn }/>
-        </Route>
+        </Route> */}
         <Route exact path='/mypets'>
           <MyPets userData={ userData }/>
         </Route>

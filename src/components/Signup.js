@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom'
 import { Button, Form, Grid, Header, Segment } from 'semantic-ui-react'
 
 
-function Signup({ setUserData, setIsLoggedIn }) {
+function Signup({ setUserData, handleSignup }) {
 
     const [newUserName, setNewUserName] = useState("")
     const [newUserPassword, setNewUserPassword] = useState("")
@@ -34,18 +34,16 @@ function Signup({ setUserData, setIsLoggedIn }) {
        .then(r => {
         console.log(r.jwt)
 
-        // if (r.user) {
-        //     setIsLoggedIn(prevState => !prevState)
-        // } else { 
-        //     alert("Something went wrong. Please try again")
-        // }
+        if (r.user) {
+            setUserData(r.user)
+            history.push('/mypets')
+        } else { 
+            alert("Something went wrong. Please try again")
+        }
 
-        setUserData(r.user)
-        history.push('/mypets')
     }
   )
 }
-
 
 
     return (
@@ -103,6 +101,9 @@ function Signup({ setUserData, setIsLoggedIn }) {
     
               <Button color='green' fluid size='large' type='submit'>
                 Submit
+              </Button>
+              <Button color='green' fluid size='large' onClick={handleSignup}>
+                Back to Login
               </Button>
             </Segment>
           </Form>

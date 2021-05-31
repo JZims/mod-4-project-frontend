@@ -6,10 +6,12 @@ import 'semantic-ui-css/semantic.min.css'
 import { BrowserRouter } from 'react-router-dom';
 
 
+
+
 ReactDOM.render(
   <BrowserRouter>
   {/* // <React.StrictMode> */}
-    <App />
+     <App />
   {/* </React.StrictMode>, */}
   </BrowserRouter>,
   document.getElementById('root')
