@@ -1,10 +1,15 @@
 import React, { useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
+import { setData } from '../store/dataSlice'
+
 
 function Login({setUserData, setIsLoggedIn}) {
   const[userNameInput, setUserNameInput] = useState("")
   const[passwordInput, setPasswordInput] = useState("")
+
+  const dispatch = useDispatch()
 
   const history = useHistory()
 
@@ -26,7 +31,7 @@ function Login({setUserData, setIsLoggedIn}) {
    .then(r => r.json())
    .then(r => {
     localStorage.token = r.jwt
-    setUserData(r.user)
+    dispatch(setData(r.user))
     if (r.user) {
       setIsLoggedIn(prevState => !prevState)
     } else { 
