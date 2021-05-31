@@ -33,12 +33,13 @@ function Login({setUserData, setIsLoggedIn}) {
     
     if (r.user) {
       setIsLoggedIn(prevState => !prevState)
+      setUserData(r.user)
+      history.push('/mypets')
     } else { 
       alert("No Matching User! Try Again.")
-      
     }
     setUserData(r.user)
-    history.push('/mypets')
+    
     })
 
 }

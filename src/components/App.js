@@ -15,7 +15,7 @@ function App() {
 
     return (
     <div>
-    <Header />
+    <Header isLoggedIn={isLoggedIn}/>
      <Switch>
        <Route exact path='/'>
         <Welcome />
