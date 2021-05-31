@@ -10,8 +10,8 @@ function MyPets({userData}) {
             setPets(updatedPetsArray)
         }
 
-    const cardIterator = pets.map(pet => { console.log(pet)
-       return  <PetCard key={pet.id} showPet={pet} handleDelete = {handleDelete}/>
+    const cardIterator = pets.map(pet => { 
+       return  <PetCard key={pet.id} showPet={pet} handleDelete={handleDelete}/>
         }
     )
 
