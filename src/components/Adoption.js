@@ -1,4 +1,5 @@
 import React from 'react'
+import AdoptionCard from './AdoptionCard'
 
 function Adoption() {
     return (

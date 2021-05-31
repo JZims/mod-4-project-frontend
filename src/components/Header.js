@@ -1,6 +1,7 @@
 import React from 'react'
-import MyPets from './MyPets';
-import Adoption from './Adoption';
+import MyPets from './MyPets'
+import Adoption from './Adoption'
+import Shop from './Shop'
 
 function Header() {
     const [pets, setPets] = useState([]);
@@ -14,9 +15,13 @@ function Header() {
     }, []);
     return (
         <div>
+<<<<<<< HEAD
             <main>
                 <MyPets />
             </main>
+=======
+            <p>Header Page</p>
+>>>>>>> 945d3c87ea876ab13da54ecee241a1906c228707
         </div>
     )
 }

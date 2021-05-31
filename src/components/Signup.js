@@ -1,13 +1,16 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 import { Button, Form, Grid, Header, Segment } from 'semantic-ui-react'
 
 
-function Signup() {
+function Signup({ setUserData, handleSignup }) {
 
     const [newUserName, setNewUserName] = useState("")
     const [newUserPassword, setNewUserPassword] = useState("")
     const [newUserBio, setNewUserBio] = useState("")
     const [newUserImage, setNewUserImage] = useState("")
+
+    const history = useHistory()
     
     const newUserObj = {
         username: newUserName, 
@@ -28,8 +31,19 @@ function Signup() {
             body: JSON.stringify({user: newUserObj})
        })
        .then(r => r.json())
-       .then(r => console.log(r))
+       .then(r => {
+        console.log(r.jwt)
+
+        if (r.user) {
+            setUserData(r.user)
+            history.push('/mypets')
+        } else { 
+            alert("Something went wrong. Please try again")
+        }
+
     }
+  )
+}
 
 
     return (
@@ -87,6 +101,9 @@ function Signup() {
     
               <Button color='green' fluid size='large' type='submit'>
                 Submit
+              </Button>
+              <Button color='green' fluid size='large' onClick={handleSignup}>
+                Back to Login
               </Button>
             </Segment>
           </Form>
