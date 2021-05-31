@@ -1,11 +1,17 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
-// import Signup from './Signup'
+import { Link, useHistory } from 'react-router-dom'
 import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
 
-function Login() {
+function Login({setUserData, setIsLoggedIn}) {
   const[userNameInput, setUserNameInput] = useState("")
   const[passwordInput, setPasswordInput] = useState("")
+
+  const history = useHistory()
+
+  const userLogin = {
+    username: userNameInput, 
+    password: passwordInput
+  }
 
   function handleLogin(e){
     e.preventDefault()
@@ -15,10 +21,24 @@ function Login() {
        headers:{
            "Content-Type": "Application/json"
        },
-        body: JSON.stringify({})
+        body: JSON.stringify({user: userLogin})
    })
    .then(r => r.json())
-   .then(r => console.log(r))
+   .then(r => {
+    localStorage.token = r.jwt
+    setUserData(r.user)
+    if (r.user) {
+      setIsLoggedIn(prevState => !prevState)
+    } else { 
+      alert("No Matching User! Try Again.")
+      
+    }
+    setUserData(r.user)
+    history.push('/mypets')
+    })
+   
+
+
 }
 
     return (

@@ -1,21 +1,38 @@
 import { Switch, Route } from 'react-router-dom'
+import React , { useState } from 'react'
 import Login from "./Login"
-import Signup from "./Signup"
-
+import Header from "./Header"
+import Signup from './Signup'
+import Welcome from './Welcome'
+import MyPets from './MyPets'
 
 function App() {
-  return (
-    <div className="App">
-      <Switch>
-        <Route exact path="/">
-          <Login />
+
+    const[userData, setUserData] = useState({})
+    const[isLoggedIn, setIsLoggedIn] = useState(false)
+
+
+    console.log(userData)
+
+    return (
+    <div>
+    <Header />
+     <Switch>
+       <Route exact path='/'>
+        <Welcome />
+       </Route>
+        <Route exact path="/login">
+          <Login setUserData={ setUserData } setIsLoggedIn= { setIsLoggedIn }/>
         </Route>
         <Route exact path="/signup">
-          <Signup />
+          <Signup setUserData={ setUserData } setIsLoggedIn= { setIsLoggedIn }/>
         </Route>
-      </Switch>
+        <Route exact path='/mypets'>
+          <MyPets userData={ userData }/>
+        </Route>
+     </Switch>
+            
     </div>
-  );
+    )
 }
-
-export default App;
+export default App
