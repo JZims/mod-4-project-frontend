@@ -7,10 +7,9 @@ import React from 'react'
         <div>
             <ul>
             <li className="card">
-                <h4>{pet.name}</h4>
-                <p>{pet.swag_total}</p>
-                <p>{pet.user_id}</p>
-                <img src = {pet.image} alt="name" />
+                <h3>{pet.name}</h3>
+                <p>Swag Pts: {pet.swag_total}</p>
+                <img src ={pet.image} alt="name" />
             </li>
             </ul>
         </div>
