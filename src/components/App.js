@@ -10,12 +10,13 @@ function App() {
     const[userData, setUserData] = useState({})
     const[isLoggedIn, setIsLoggedIn] = useState(false)
 
+  
 
     console.log(userData)
 
     return (
     <div>
-    <Header />
+    <Header isLoggedIn={isLoggedIn}/>
      <Switch>
        <Route exact path='/'>
         <Welcome />
