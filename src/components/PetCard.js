@@ -1,11 +1,11 @@
 import React from 'react'
 
- function PetCard({showPet}) {
+ function PetCard({showPet, handleDelete}) {
     //  const [pets, setPets] = useState("")
     console.log(showPet)
 
-    function handleDelete(id) {
-        fetch(`http://localhost:3000/pets${id}`, {
+    function onDelete() {
+        fetch(`http://localhost:3000/pets${showPet.id}`, {
             method: "DELETE",
             headers: {
                 "Content-Type" : "application/json",
@@ -13,7 +13,9 @@ import React from 'react'
             }
         })
             .then(r =>r.json())
-            .then(r => console.log(r))
+            .then(r => {
+                handleDelete(id)
+            })
     }
 
     return (

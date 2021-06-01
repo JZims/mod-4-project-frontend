@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import PetCard from './PetCard'
 import { Link } from 'react-router-dom'
 
@@ -14,10 +14,8 @@ function MyPets({userPets, userInfo}) {
 
     const cardIterator = pets.map(pet => { 
        return  <PetCard key={pet.id} showPet={pet} handleDelete={handleDelete}/>
-        }
+        } 
     )
-
-
     return (
         <div>
             <h1>{userInfo.username}'s MyPets Page</h1>
