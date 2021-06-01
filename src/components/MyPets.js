@@ -1,10 +1,12 @@
 import React, {useState} from 'react'
 import PetCard from './PetCard'
+import { Link } from 'react-router-dom'
 
 
-function MyPets({userData}) {
-    const [pets, setPets] = useState([userData.pets])
-
+function MyPets({userPets, userInfo}) {
+    
+    const [pets, setPets] = useState(userPets.pets)
+    console.log(pets)
     function handleDelete(id) {
         const updatedPetsArray = pets.filter((pet) => pet.id !== id);
             setPets(updatedPetsArray)
@@ -18,8 +20,8 @@ function MyPets({userData}) {
 
     return (
         <div>
-            <h1>{userData.username}'s MyPets Page</h1>
-            {cardIterator}
+            <h1>{userInfo.username}'s MyPets Page</h1>
+            {pets.length > 0 ? cardIterator : <h3>Duuuude, you don't have any pets yet! Check out the <Link to='/adoption'>Adoption</Link> page to get some little buddies. Rad!</h3>}
         </div>
     )
 }

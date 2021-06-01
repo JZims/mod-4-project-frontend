@@ -4,15 +4,18 @@ import Login from "./Login"
 import Header from "./Header"
 import Welcome from './Welcome'
 import MyPets from './MyPets'
+import Adoption from './Adoption'
 
 function App() {
 
-    const[userData, setUserData] = useState({})
+    const[userPets, setUserPets] = useState({pets: []})
+    const[userInfo, setUserInfo] = useState({user: []})
+    const[userItems, setUserItems] = useState({items: []})
     const[isLoggedIn, setIsLoggedIn] = useState(false)
 
     
 
-    console.log(userData)
+    console.log(userPets)
 
     return (
     <div>
@@ -22,13 +25,13 @@ function App() {
         <Welcome />
        </Route>
         <Route exact path="/login">
-          <Login setUserData={ setUserData } setIsLoggedIn= { setIsLoggedIn }/>
+          <Login setUserPets={ setUserPets } setUserInfo={ setUserInfo } setUserItems={ setUserItems } setIsLoggedIn= { setIsLoggedIn }/>
         </Route>
-        {/* <Route exact path="/signup">
-          <Signup setUserData={ setUserData } setIsLoggedIn= { setIsLoggedIn }/>
-        </Route> */}
+        <Route exact path="/adoption">
+          <Adoption />
+        </Route>
         <Route exact path='/mypets'>
-          <MyPets userData={ userData }/>
+          <MyPets userInfo={ userInfo } userPets={ userPets }/>
         </Route>
      </Switch>
             

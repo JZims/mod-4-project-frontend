@@ -5,7 +5,7 @@ import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui
 
 
 
-function Login({setUserData, setIsLoggedIn}) {
+function Login({setUserPets, setUserInfo, setUserItems, setIsLoggedIn}) {
   const[userNameInput, setUserNameInput] = useState("")
   const[passwordInput, setPasswordInput] = useState("")
   const[showCreateUser, setShowCreateUser] = useState(false)
@@ -29,16 +29,19 @@ function Login({setUserData, setIsLoggedIn}) {
    })
    .then(r => r.json())
    .then(r => {
-    localStorage.token = r.jwt
-    
+     
     if (r.user) {
       setIsLoggedIn(prevState => !prevState)
-      setUserData(r.user)
+      setUserPets({pets:[...r.user.pets]})
+      setUserInfo(r.user)
+      setUserItems({items:[...r.user.items]})
+      const token = r.jwt
+      localStorage.setItem=(token)
       history.push('/mypets')
     } else { 
       alert("No Matching User! Try Again.")
     }
-    setUserData(r.user)
+  
     
     })
 
@@ -50,7 +53,7 @@ function handleSignup(){
 
     return (
     <>
-    { showCreateUser ?  <Signup setUserData={setUserData} handleSignup={handleSignup}/> :
+    { showCreateUser ?  <Signup setUserInfo={setUserInfo} setIsLoggedIn={ setIsLoggedIn } setUserPets={ setUserPets } setUserItems={ setUserItems } handleSignup={handleSignup}/> :
         <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
         <Grid.Column style={{ maxWidth: 450 }}>
           <Header as='h2' color='green' textAlign='center'>

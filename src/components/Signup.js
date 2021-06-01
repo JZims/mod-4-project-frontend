@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom'
 import { Button, Form, Grid, Header, Segment } from 'semantic-ui-react'
 
 
-function Signup({ setUserData, handleSignup }) {
+function Signup({ setUserPets, setUserInfo, setUserItems, handleSignup, setIsLoggedIn }) {
 
     const [newUserName, setNewUserName] = useState("")
     const [newUserPassword, setNewUserPassword] = useState("")
@@ -32,11 +32,14 @@ function Signup({ setUserData, handleSignup }) {
        })
        .then(r => r.json())
        .then(r => {
-        console.log(r.jwt)
-
         if (r.user) {
-            setUserData(r.user)
-            history.push('/mypets')
+          setIsLoggedIn(prevState => !prevState)
+          setUserPets({pets:[...r.user.pets]})
+          setUserInfo(r.user)
+          setUserItems({items:[...r.user.items]})
+          const token = r.jwt
+          localStorage.setItem=(token)
+          history.push('/mypets')
         } else { 
             alert("Something went wrong. Please try again")
         }
