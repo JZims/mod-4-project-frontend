@@ -3,7 +3,7 @@ import MyPets from './MyPets'
 import Adoption from './Adoption'
 import Shop from './Shop'
 
-function Header({isLoggedIn }) {
+function Header({ isLoggedIn }) {
 
 
 
