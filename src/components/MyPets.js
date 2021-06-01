@@ -1,9 +1,10 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import PetCard from './PetCard'
 
 
 function MyPets({userData}) {
-    const [pets, setPets] = useState([userData.pets])
+    const [pets, setPets] = useState()
+    console.log(userData)
 
     function handleDelete(id) {
         const updatedPetsArray = pets.filter((pet) => pet.id !== id);
@@ -12,14 +13,14 @@ function MyPets({userData}) {
 
     const cardIterator = pets.map(pet => { 
        return  <PetCard key={pet.id} showPet={pet} handleDelete={handleDelete}/>
-        }
+        } 
     )
-
-
     return (
         <div>
-            <h1>{userData.username}'s MyPets Page</h1>
-            {cardIterator}
+ 
+            {userData.username ? 
+                <h1>{userData.username}'s MyPets Page {cardIterator}</h1>
+            : <h3>Please Login First</h3>}
         </div>
     )
 }

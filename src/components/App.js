@@ -10,8 +10,6 @@ function App() {
     const[userData, setUserData] = useState({})
     const[isLoggedIn, setIsLoggedIn] = useState(false)
 
-    
-
     console.log(userData)
 
     return (
