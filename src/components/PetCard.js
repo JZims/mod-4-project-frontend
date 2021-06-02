@@ -33,4 +33,4 @@ import React from 'react'
     )
 }
 
-export default PetCard
+export default PetCard;
