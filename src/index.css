@@ -1,4 +1,4 @@
-body {
+/* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,4 +10,46 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+} */
+* {
+  background-image: url("https://i.ibb.co/vsTjKQz/90s-website-style.jpg");
+}
+/* #container {
+  background-image: url("https://i.ibb.co/7kDf11p/depositphotos-120241218-stock-illustration-retro-cassettes-in-flat-style.jpg");
+  background-color: black;
+  background-size: cover;
+} */
+img {
+  width: 400px;
+  height: 400px;
+}
+.delete {
+  color: black;
+  width: 400px;
+  padding: 10px;
+  background: #F78D40 ;
+  font-size: 18pt;
+  border: 5px solid #B24640;
+}
+.pet-card {
+  border: solid #f2f2f2 1px;  
+  margin: 10px;
+  width: 420px;
+  background-color: white;
+  border: 10px solid #F04AA8;
+  /* display: inline-grid; */
+}
+.user-page {
+  text-decoration: none;
+  font-size: 45pt;
+  letter-spacing: -3px;
+  font-weight: normal;
+  font-family: Helvetica;
+}
+
+.pet-name {
+  font-size: 28pt;
+  text-decoration: none;
+  color: #5BB9EA;
+  letter-spacing: 4px;
 }

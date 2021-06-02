@@ -19,18 +19,17 @@ import React from 'react'
     }
 
     return (
-        <div>
-            <ul>
-            <li className="pet-card">
-                <h4>Name: {showPet.name}</h4>
+        <div className="container">
+            <div className="pet-card">
+                <h4 className="pet-name">Name: {showPet.name}</h4>
                 <p>Swag Pts: {showPet.swag_total}</p>
                 {/* <p>{showPet.user_id}</p> */}
                 <img src={showPet.image} alt={showPet.image} />
-                <button onClick= {onDelete}>Delete</button>
-            </li>
-            </ul>
+                <br/><button onClick= {onDelete} className="delete">Delete</button>
+            </div>
         </div>
     )
 }
+
 
 export default PetCard;
