@@ -14,7 +14,7 @@ import React from 'react'
         })
             .then(r =>r.json())
             .then(r => {
-                handleDelete(id)
+                handleDelete(showPet.id)
             })
     }
 
@@ -25,12 +25,12 @@ import React from 'react'
                 <h4>Name: {showPet.name}</h4>
                 <p>Swag Pts: {showPet.swag_total}</p>
                 {/* <p>{showPet.user_id}</p> */}
-                <img src={showPet.image} alt={showPet.name} className="pet-card-image" />
-                <button onClick= {handleDelete}>Delete</button>
+                <img src={showPet.image} alt={showPet.image} />
+                <button onClick= {onDelete}>Delete</button>
             </li>
             </ul>
         </div>
     )
 }
 
-export default PetCard
+export default PetCard;
