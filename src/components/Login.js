@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Signup from './Signup'
-import { Link, useHistory } from 'react-router-dom'
-import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
+import { useHistory } from 'react-router-dom'
+import { Button, Form, Grid, Header, Message, Segment } from 'semantic-ui-react'
 
 
 

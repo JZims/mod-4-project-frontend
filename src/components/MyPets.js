@@ -7,6 +7,7 @@ function MyPets({userPets, userInfo}) {
     
     const [pets, setPets] = useState(userPets.pets)
     console.log(pets)
+    
     function handleDelete(id) {
         const updatedPetsArray = pets.filter((pet) => pet.id !== id);
             setPets(updatedPetsArray)

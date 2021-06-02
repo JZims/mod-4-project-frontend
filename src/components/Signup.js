@@ -31,7 +31,7 @@ function Signup({ setUserPets, setUserInfo, setUserItems, handleSignup, setIsLog
             body: JSON.stringify({user: newUserObj})
        })
        .then(r => r.json())
-       .then(r => {
+       .then(r => { console.log(r)
         if (r.user) {
           setIsLoggedIn(prevState => !prevState)
           setUserPets({pets:[...r.user.pets]})

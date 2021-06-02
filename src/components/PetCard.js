@@ -14,7 +14,7 @@ import React from 'react'
         })
             .then(r =>r.json())
             .then(r => {
-                handleDelete(id)
+                handleDelete(showPet.id)
             })
     }
 
@@ -26,7 +26,7 @@ import React from 'react'
                 <p>Swag Pts: {showPet.swag_total}</p>
                 {/* <p>{showPet.user_id}</p> */}
                 <img src={showPet.image} alt={showPet.name} className="pet-card-image" />
-                <button onClick= {handleDelete}>Delete</button>
+                <button onClick= {onDelete}>Delete</button>
             </li>
             </ul>
         </div>
