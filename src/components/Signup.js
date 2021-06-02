@@ -38,7 +38,7 @@ function Signup({ setUserPets, setUserInfo, setUserItems, handleSignup, setIsLog
           setUserInfo(r.user)
           setUserItems({items:[...r.user.items]})
           const token = r.jwt
-          localStorage.setItem=(token)
+          localStorage.token= token
           history.push('/mypets')
         } else { 
             alert("Something went wrong. Please try again")

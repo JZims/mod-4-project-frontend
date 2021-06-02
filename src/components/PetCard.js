@@ -5,7 +5,7 @@ import React from 'react'
     console.log(showPet)
 
     function onDelete() {
-        fetch(`http://localhost:3000/pets${showPet.id}`, {
+        fetch(`http://localhost:3000/pets/${showPet.id}`, {
             method: "DELETE",
             headers: {
                 "Content-Type" : "application/json",
