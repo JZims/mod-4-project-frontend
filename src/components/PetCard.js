@@ -1,8 +1,7 @@
 import React from 'react'
 
  function PetCard({showPet, handleDelete}) {
-    //  const [pets, setPets] = useState("")
-    console.log(showPet)
+    
 
     function onDelete() {
         fetch(`http://localhost:3000/pets/${showPet.id}`, {

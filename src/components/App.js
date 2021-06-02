@@ -1,5 +1,5 @@
 import { Switch, Route } from 'react-router-dom'
-import React , { useState } from 'react'
+import React , { useState, useEffect } from 'react'
 import Login from "./Login"
 import Header from "./Header"
 import Welcome from './Welcome'
@@ -13,7 +13,28 @@ function App() {
     const[userItems, setUserItems] = useState({items: []})
     const[isLoggedIn, setIsLoggedIn] = useState(false)
 
-    
+
+    useEffect(() => {
+        if(localStorage.token){
+          fetch(`http://localhost:3000/api/v1/profile`, {
+            headers:{
+                Authorization: `Bearer ${localStorage.token}`
+           } 
+          }
+         )
+          .then(r => r.json())
+          .then(r => 
+              // console.log(r)
+              helpSetUser(r.user)
+            )
+          }
+        }, [])
+
+      const helpSetUser = (user) => {
+        setUserPets({pets: [...user.pets]})
+        setUserItems({items: [...user.items]})
+        setUserInfo(user)
+      }
 
     console.log(userPets)
 
@@ -31,7 +52,7 @@ function App() {
           <Adoption />
         </Route>
         <Route exact path='/mypets'>
-          <MyPets userInfo={ userInfo } userPets={ userPets }/>
+          <MyPets userInfo={ userInfo } userPets={ userPets } setUserPets= { setUserPets}/>
         </Route>
      </Switch>
             

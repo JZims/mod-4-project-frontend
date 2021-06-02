@@ -2,6 +2,10 @@ import React from 'react'
 
  function AdoptionCard({adoption}) {
      const{name, swag_total, image} = adoption;
+
+    //POST request to create new Adoption goes here, passes up state
+
+
     return (
         <div>
             <li className="adoption">

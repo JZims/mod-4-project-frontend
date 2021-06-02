@@ -13,14 +13,14 @@ function MyPets({userPets, userInfo}) {
             setPets(updatedPetsArray)
         }
 
-    const cardIterator = pets.map(pet => { 
+    const cardIterator = userPets.pets.map(pet => { 
        return  <PetCard key={pet.id} showPet={pet} handleDelete={handleDelete}/>
         } 
     )
     return (
         <div>
             <h1>{userInfo.username}'s MyPets Page</h1>
-            {pets.length > 0 ? cardIterator : <h3>Duuuude, you don't have any pets yet! Check out the <Link to='/adoption'>Adoption</Link> page to get some little buddies. Rad!</h3>}
+            {userPets.pets.length > 0 ? cardIterator : <h3>Duuuude, you don't have any pets yet! Check out the <Link to='/adoption'>Adoption</Link> page to get some little buddies. Rad!</h3>}
         </div>
     )
 }

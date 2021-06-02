@@ -3,6 +3,7 @@ import AdoptionCard from './AdoptionCard'
 
 function Adoption() {
     const [adoptions, setAdoptions] = useState([])
+    
     useEffect(() => {
         fetch("http://localhost:3000/adoptions")
         .then((r) => r.json())
