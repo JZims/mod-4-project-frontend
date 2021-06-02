@@ -36,7 +36,7 @@ function Login({setUserPets, setUserInfo, setUserItems, setIsLoggedIn}) {
       setUserInfo(r.user)
       setUserItems({items:[...r.user.items]})
       const token = r.jwt
-      localStorage.setItem=(token)
+      localStorage.token=token
       history.push('/mypets')
     } else { 
       alert("No Matching User! Try Again.")
