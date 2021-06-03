@@ -5,12 +5,11 @@ import Shop from './Shop'
 
 function Header({ isLoggedIn }) {
 
-  
+
 
     return (
         <div>
             <p>Header Page</p>
-            {itemCards}
         </div>
     )
 }
