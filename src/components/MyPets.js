@@ -19,7 +19,7 @@ function MyPets({userPets, userInfo}) {
     )
     return (
         <div>
-            <h1>{userInfo.username}'s MyPets Page</h1>
+            <h1 className="user-name">{userInfo.username}'s MyPets Page</h1>
             {userPets.pets.length > 0 ? cardIterator : <h3>Duuuude, you don't have any pets yet! Check out the <Link to='/adoption'>Adoption</Link> page to get some little buddies. Rad!</h3>}
         </div>
     )

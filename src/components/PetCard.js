@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
  function PetCard({showPet, handleDelete}) {
     
@@ -24,8 +25,8 @@ import React from 'react'
                 <p>Swag Pts: {showPet.swag_total}</p>
                 {/* <p>{showPet.user_id}</p> */}
                 <img src={showPet.image} alt={showPet.image} />
-                <br/>
-                <button onClick= {onDelete} className="delete">Delete</button>
+                <br/><button className="item-button"><Link to='/items'>Item Shop</Link></button>
+                <br/><button onClick= {onDelete} className="delete">Delete</button>
             </div>
         </div>
     )

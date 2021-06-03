@@ -13,6 +13,10 @@ code {
 } */
 .login {
   background-image: url("https://i.ibb.co/vsTjKQz/90s-website-style.jpg");
+  max-height: 100%;
+  /* background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
 }
 .flex-box {
   background-image: url("https://ak.picdn.net/shutterstock/videos/1016011171/thumb/1.jpg");
@@ -21,7 +25,6 @@ code {
 }
 
 .pet-card {
-  border: solid #f2f2f2 1px;  
   margin: auto;
   width: 420px;
   background-color: white;
@@ -48,6 +51,16 @@ img {
   color: #BCEA89;
   background: black;
 }
+.user-name {
+  font-size: 100pt;
+  letter-spacing: 4px;
+  line-height: 60pt;
+  text-align: center;
+  font-weight: normal;
+  color: #FFB208;
+  text-shadow: 10px 10px #53EBE2;
+  background: #CDF453;
+}
 
 .pet-name {
   font-size: 28pt;
@@ -55,4 +68,48 @@ img {
   color: #5BB9EA;
   letter-spacing: 4px;
   background: white;
+}
+.item-card {
+  width: 200px;
+  height: auto;
+  text-align: center;
+  margin: auto;
+  padding-bottom: 50px; 
+  border: none;
+}
+.item-button {
+  color: black;
+  width: 400px;
+  padding: 10px;
+  background: #F7F66E ;
+  font-size: 18pt;
+  border: 5px solid #B24640;
+  display: inline-grid;
+}
+.item-container {
+  border: 5px solid #E9FACA;
+  width: 300px;
+  background: white;
+}
+p {
+  font-size: 18pt;
+  color: black;
+  text-shadow: none;
+}
+.shop {
+  font-size: 100pt;
+  letter-spacing: 4px;
+  line-height: 60pt;
+  text-align: center;
+  font-weight: normal;
+  color: #FFB208;
+  text-shadow: 10px 10px #53EBE2;
+  background-image: url("https://i.pinimg.com/originals/0b/0d/c9/0b0dc9542cd849e9ffa36d01bfaa371d.png");
+}
+.item-name {
+  border-bottom: 2px solid black;
+  color: #8F50CE;
+  background: #FEFF54;
+  text-shadow: none;
+  text-align: center;
 }
