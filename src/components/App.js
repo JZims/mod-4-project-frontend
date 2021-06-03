@@ -31,7 +31,7 @@ function App() {
           <Adoption />
         </Route>
         <Route exact path='/mypets'>
-          <MyPets userInfo={ userInfo } userPets={ userPets }/>
+          <MyPets userInfo={ userInfo } userPets={ userPets } userItems={ userItems }/>
         </Route>
      </Switch>
             

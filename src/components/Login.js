@@ -52,7 +52,7 @@ function handleSignup(){
 }
 
     return (
-    <>
+    <div className="login">
     { showCreateUser ?  <Signup setUserInfo={setUserInfo} setIsLoggedIn={ setIsLoggedIn } setUserPets={ setUserPets } setUserItems={ setUserItems } handleSignup={handleSignup}/> :
         <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
         <Grid.Column style={{ maxWidth: 450 }}>
@@ -90,7 +90,7 @@ function handleSignup(){
        </Grid>
         }
        
-     </>
+     </div>
     )
 }
 
