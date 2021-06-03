@@ -30,12 +30,12 @@ function Shop() {
 
 
     return (
-        <main className="shop">
-        <div className="item-card">
-            <h1 className="">Shop</h1>
+        <div className="shop">
+            <div className="item-card">
+            <h1 className="shop">Shop:</h1>
             {itemCards}
         </div>
-        </main>
+        </div>
     )
 }
 
