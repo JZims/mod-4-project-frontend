@@ -13,6 +13,10 @@ code {
 } */
 .login {
   background-image: url("https://i.ibb.co/vsTjKQz/90s-website-style.jpg");
+  max-height: 100%;
+  /* background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
 }
 .flex-box {
   background-image: url("https://ak.picdn.net/shutterstock/videos/1016011171/thumb/1.jpg");
@@ -55,4 +59,33 @@ img {
   color: #5BB9EA;
   letter-spacing: 4px;
   background: white;
+}
+/* .shop {
+  display: inline-grid;
+  height: 300px;
+} */
+.item-card {
+  width: 200px;
+  height: auto;
+  display: flex;
+  text-align: center;
+  /* margin: auto; */
+  padding-bottom: 50px;
+}
+.item-button {
+  color: black;
+  width: 400px;
+  padding: 10px;
+  background: #F7F66E ;
+  font-size: 18pt;
+  border: 5px solid #B24640;
+  display: inline-grid;
+}
+/* .item-container {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+} */
+p {
+  font-size: 14pt;
 }

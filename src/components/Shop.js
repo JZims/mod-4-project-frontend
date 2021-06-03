@@ -1,15 +1,41 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
+import ItemCard from './ItemCard'
 
-function Shop({items}) {
-    const{name, swag_points, image} = items
+function Shop() {
+    const [items, setItems] = useState([])
+    
+    useEffect(() => {
+        // if(localStorage.token){
+          fetch("http://localhost:3000/items", {
+            headers:{
+                Authorization: `Bearer ${localStorage.token}`
+           } 
+          }
+         )
+          .then(r => r.json())
+          .then((itemsArray) =>
+            setItems(itemsArray)
+            )
+          }, [])
+
+
+        const itemCards = items.map((item) => {
+            return <ItemCard
+                key={item.id}
+                name={item.name}
+                swag_points={item.swag_points}
+                image={item.image}
+            />
+        })
 
 
     return (
+        <main className="shop">
         <div className="item-card">
-            <h2 className="item">{name}</h2>
-            <img src={image} alt={name}/>
-            <p>Swag Points: {swag_points}</p>        
+            <h1 className="">Shop</h1>
+            {itemCards}
         </div>
+        </main>
     )
 }
 
