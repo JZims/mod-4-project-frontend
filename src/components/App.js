@@ -52,7 +52,7 @@ function App() {
           <Adoption />
         </Route>
         <Route exact path='/mypets'>
-          <MyPets userInfo={ userInfo } userPets={ userPets } setUserPets= { setUserPets}/>
+          <MyPets userInfo={ userInfo } userPets={ userPets } setUserPets= { setUserPets} userItems={ userItems }/>
         </Route>
      </Switch>
             
