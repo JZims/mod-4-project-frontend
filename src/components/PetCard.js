@@ -24,7 +24,8 @@ import React from 'react'
                 <p>Swag Pts: {showPet.swag_total}</p>
                 {/* <p>{showPet.user_id}</p> */}
                 <img src={showPet.image} alt={showPet.image} />
-                <br/><button onClick= {onDelete} className="delete">Delete</button>
+                <br/>
+                <button onClick= {onDelete} className="delete">Delete</button>
             </div>
         </div>
     )

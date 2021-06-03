@@ -15,6 +15,7 @@ function App() {
 
 
     useEffect(() => {
+
         if(localStorage.token){
           fetch(`http://localhost:3000/api/v1/profile`, {
             headers:{
