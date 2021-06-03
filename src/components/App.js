@@ -29,6 +29,8 @@ function App() {
               console.log(r)
               // helpSetUser(r.user)
             )
+          } else {
+            alert("Please Log In First!")
           }
         }, [])
 

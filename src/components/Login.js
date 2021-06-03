@@ -31,7 +31,7 @@ function Login({setUserPets, setUserInfo, setUserItems, setIsLoggedIn}) {
    .then(r => {
      
     if (r.user) {
-      setIsLoggedIn(prevState => !prevState)
+      setIsLoggedIn(true)
       setUserPets({pets:[...r.user.pets]})
       setUserInfo(r.user)
       setUserItems({items:[...r.user.items]})
