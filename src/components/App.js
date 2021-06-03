@@ -5,6 +5,7 @@ import Header from "./Header"
 import Welcome from './Welcome'
 import MyPets from './MyPets'
 import Adoption from './Adoption'
+import Shop from './Shop'
 
 function App() {
 
@@ -25,8 +26,8 @@ function App() {
          )
           .then(r => r.json())
           .then(r => 
-              // console.log(r)
-              helpSetUser(r.user)
+              console.log(r)
+              // helpSetUser(r.user)
             )
           }
         }, [])
@@ -54,6 +55,9 @@ function App() {
         </Route>
         <Route exact path='/mypets'>
           <MyPets userInfo={ userInfo } userPets={ userPets } setUserPets= { setUserPets} userItems={ userItems }/>
+        </Route>
+        <Route exact path='/items'>
+          <Shop />
         </Route>
      </Switch>
             
