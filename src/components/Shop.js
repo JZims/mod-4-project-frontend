@@ -1,9 +1,13 @@
 import React, {useEffect, useState} from 'react'
 import ItemCard from './ItemCard'
+import {Button} from 'semantic-ui-react'
+import ItemForm from './ItemForm'
 
 function Shop() {
-    const [items, setItems] = useState([])
-    
+
+    const[items, setItems] = useState([])
+    const[showForm, setShowForm] = useState(false)
+
     useEffect(() => {
         // if(localStorage.token){
           fetch("http://localhost:3000/items", {
@@ -28,14 +32,26 @@ function Shop() {
             />
         })
 
+    function handleAddItem(newItem) {
+        const updatedItemsArray = [...items, newItem];
+        setItems(updatedItemsArray)
+    }
+
+    function handleFormToggle() {
+        setShowForm(!showForm)
+    }
 
     return (
-        <div className="shop">
-            <div className="item-card">
-            <h1 className="shop">Shop:</h1>
-            {itemCards}
-        </div>
-        </div>
+                
+        <>
+        {showForm ? <ItemForm onAddItem={handleAddItem}/> : 
+                <div className="shop">
+                <div className="item-card">
+                    <h1 className="shop">Shop:</h1>{itemCards}
+                </div>
+                </div>}
+                <Button onClick={handleFormToggle}>Add Item</Button>
+        </>
     )
 }
 
