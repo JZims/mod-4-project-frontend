@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
- function PetCard({showPet, setFilteredPets, userPets}) {
+ function PetCard({showPet, handleDelete}) {
     
 
     function onDelete() {
@@ -18,11 +18,7 @@ import { Link } from 'react-router-dom'
             })
     }
 
-    function handleDelete(id) {
-        const updatedPetsArray = userPets.filter((pet) => pet.id !== id);
-        setFilteredPets(updatedPetsArray)
-    }     
-
+    
     return (
             <div className="pet-card">
                 <h4 className="pet-name">Name: {showPet.name}</h4>

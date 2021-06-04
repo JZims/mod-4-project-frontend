@@ -17,8 +17,7 @@ function App() {
 
 
     useEffect(() => {
-
-        if(localStorage.token){
+        if(localStorage.token && userPets.pets.length > 0 ){
           fetch(`http://localhost:3000/api/v1/profile`, {
             headers:{
                 Authorization: `Bearer ${localStorage.token}`
@@ -33,7 +32,7 @@ function App() {
           } else {
             alert("Please Log In First!")
           }
-        }, [])
+        }, [userPets.pets.length])
 
       const helpSetUser = (user) => {
         setUserPets({pets: [...user.pets]})

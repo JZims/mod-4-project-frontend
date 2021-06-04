@@ -21,6 +21,7 @@ code {
 .flex-box {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   background-image: url("https://ak.picdn.net/shutterstock/videos/1016011171/thumb/1.jpg");
   background-color: black;
   background-size: cover;
