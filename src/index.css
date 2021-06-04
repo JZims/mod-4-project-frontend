@@ -95,6 +95,7 @@ img {
   display: inline-grid;
 }
 .item-container {
+  
   border: 5px solid #E9FACA;
   width: 300px;
   background: white;
@@ -118,7 +119,7 @@ p {
   font-size: 100pt;
   letter-spacing: 4px;
   line-height: 60pt;
-  text-align: center;
+  
   font-weight: normal;
   color: #FFB208;
   text-shadow: 10px 10px #53EBE2;
@@ -159,4 +160,14 @@ input[type=number], select {
 .add-button {
   width: 50%;
   padding: 10px;
+}
+
+#adoption {
+  margin-top: 15%;
+}
+
+.login-button{
+  margin-top: 15%;
+  text-align: center;
+  text-shadow: 10px 10px #53EBE2;
 }

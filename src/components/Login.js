@@ -57,7 +57,7 @@ function handleSignup(){
         <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
         <Grid.Column style={{ maxWidth: 450 }}>
           <Header as='h2' color='purple' textAlign='center'>
-             Log-in
+             
           </Header>
           <Form size='large' onSubmit={handleLogin}>
             <Segment stacked>
@@ -78,13 +78,13 @@ function handleSignup(){
                 onChange={e => setPasswordInput(e.target.value)}
               />
     
-              <Button color='green' fluid size='large' type='submit'>
+              <Button color='purple' fluid size='large' type='submit'>
                 Login
               </Button>
             </Segment>
           </Form>
           <Message>
-            <Button color='green' fluid size='large' onClick={handleSignup}> New here? Sign up here!</Button>
+            <Button color='purple' fluid size='large' onClick={handleSignup}> N00b? Sign up here!</Button>
           </Message>
         </Grid.Column>
        </Grid>
