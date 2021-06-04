@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
- function PetCard({showPet, handleDelete}) {
+ function PetCard({showPet, setFilteredPets, userPets}) {
     
 
     function onDelete() {
@@ -18,8 +18,12 @@ import { Link } from 'react-router-dom'
             })
     }
 
+    function handleDelete(id) {
+        const updatedPetsArray = userPets.filter((pet) => pet.id !== id);
+        setFilteredPets(updatedPetsArray)
+    }     
+
     return (
-        <div className="flex-box">
             <div className="pet-card">
                 <h4 className="pet-name">Name: {showPet.name}</h4>
                 <p>Swag Pts: {showPet.swag_total}</p>
@@ -28,7 +32,7 @@ import { Link } from 'react-router-dom'
                 <br/><button className="item-button"><Link to='/items'>Item Shop</Link></button>
                 <br/><button onClick= {onDelete} className="delete">Delete</button>
             </div>
-        </div>
+        
     )
 }
 

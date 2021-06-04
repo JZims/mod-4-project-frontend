@@ -10,7 +10,7 @@ import Shop from './Shop'
 function App() {
 
     const[userPets, setUserPets] = useState({pets: []})
-    const[userInfo, setUserInfo] = useState({user: []})
+    const[userInfo, setUserInfo] = useState({})
     const[userItems, setUserItems] = useState({items: []})
     const[isLoggedIn, setIsLoggedIn] = useState(false)
 
@@ -26,8 +26,8 @@ function App() {
          )
           .then(r => r.json())
           .then(r => 
-              console.log(r)
-              // helpSetUser(r.user)
+              // console.log(r)
+              helpSetUser(r.user)
             )
           } else {
             alert("Please Log In First!")
@@ -56,7 +56,7 @@ function App() {
           <Adoption />
         </Route>
         <Route exact path='/mypets'>
-          <MyPets userInfo={ userInfo } userPets={ userPets } setUserPets= { setUserPets} userItems={ userItems }/>
+          <MyPets userInfo={ userInfo } userPets={ userPets.pets } setUserPets= { setUserPets} userItems={ userItems }/>
         </Route>
         <Route exact path='/items'>
           <Shop />
