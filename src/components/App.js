@@ -27,8 +27,8 @@ function App() {
          )
           .then(r => r.json())
           .then(r => 
-              // console.log(r)
-              helpSetUser(r.user)
+              console.log(r)
+              // helpSetUser(r.user)
             )
           } else {
             alert("Please Log In First!")

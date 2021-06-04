@@ -3,7 +3,7 @@ import React, { useState } from "react";
 function ItemForm({onAddItem}) {
 
     const[name, setName] = useState("");
-    const[swagPoints, setSwagPoints]=useState("");
+    const[swag_points, setSwagPoints]=useState("");
     const[image, setImage] = useState("");
 
     function handleSubmit(e) {
@@ -16,7 +16,7 @@ function ItemForm({onAddItem}) {
             },
             body: JSON.stringify({
                 name: name,
-                swagPoints: swagPoints,
+                swag_points: swag_points,
                 image: image,
             }),
         })
@@ -27,7 +27,7 @@ function ItemForm({onAddItem}) {
 
   return (
     <div className="new-item-form">
-        <h2>Add New Item</h2>
+        <h2 className="form-header">Add New Item</h2>
         <form onSubmit={handleSubmit}>
             <input type="text"
             name="name"
@@ -40,7 +40,7 @@ function ItemForm({onAddItem}) {
                 type="number"
                 swag_points="swag_points"
                 placeholder="swag points"
-                value={swagPoints}
+                value={swag_points}
                 onChange={(e) => setSwagPoints(e.target.value)}
                 />
             <br/>
@@ -52,7 +52,7 @@ function ItemForm({onAddItem}) {
                 onChange={(e)=>setImage(e.target.value)}
                 />
                 <br/>
-                <button type="submit" className="add-button">Add Item</button>
+                <button type="submit" className="add-button">Create</button>
                 </form>
     </div>
   );

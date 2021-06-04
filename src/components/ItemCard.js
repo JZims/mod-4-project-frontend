@@ -1,16 +1,24 @@
-import React from 'react'
+import React, {useState} from 'react'
 // import ItemForm from "./ItemForm"
 
-function ItemCard({name, swag_points, image}) {
- 
+function ItemCard({name, swag_points, image, id, onDelete}) {
+ const[items,setItems]=useState([])
 
     function handlePopup() {
         alert("swag points added to pet");
     }
-
-    // function handleAddItem(newItem) {
-    //     const updatedItemsArray = [...items, newItem];
-    //     setItems(updatedItemsArray)
+    // function handleOnDelete() {
+    //     fetch(`http://localhost:3001/items${id}`, {
+    //         method: "DELETE",
+    //     })
+    //     .then((r) => r.json())
+    //     .then(() => {
+    //         onDelete(id)
+    //     })
+    // }
+    // function onDelete(id) {
+    //     const updatedItemsArray = items.filter(item=>item.id !==id)
+    //         setItems(updatedItemsArray)
     // }
     return (
         <div className="item-container">
@@ -19,7 +27,7 @@ function ItemCard({name, swag_points, image}) {
             <div className="popup">
             <img src={image} className="item-card" onClick={handlePopup}/>
             </div>
-            {/* <ItemForm onAddItem={handleAddItem}/> */}
+            {/* <button onClick={handleOnDelete}>Delete</button> */}
         </div>
     )
 }
