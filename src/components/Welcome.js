@@ -5,8 +5,8 @@ function Welcome() {
 
     return (
         <div className="">
-            <h1 className="welcome">Welcome Page</h1>
-            <Link to='/login'>Login Here</Link>
+            <h1 className="welcome">Let's Get Weird!</h1>
+            <div className="login-button"><Link to='/login'>Login Here</Link></div>
     
         </div>
     )

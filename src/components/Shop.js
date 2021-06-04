@@ -49,7 +49,8 @@ function Shop() {
         {showForm ? <ItemForm onAddItem={handleAddItem}/> : 
                 <div className="shop">
                 <div className="item-card">
-                    <h1 className="shop">Shop:</h1>{itemCards}
+                    <h1 className="shop">Shop:</h1>
+                    {itemCards}
                 </div>
                 </div>}
                 <Button onClick={handleFormToggle}>Add Item</Button>
