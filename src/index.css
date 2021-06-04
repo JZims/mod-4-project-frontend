@@ -192,19 +192,32 @@ letter-spacing: 4px;
 }
 .button:hover {
   color: #F6E25E;
-  font-size: 20pt;
   border-bottom: 6px dotted black;
-  background: #5EB2F6
+  background: #5EB2F6;
 }
 .nav-bar {
   background-color: transparent;
   text-align: center;
   padding-top: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 .divider {
   display: inline;
   color: white;
   padding-left: 50px;
   padding-right: 50px;
+}
+.banner {
+  height: 480px;
+  width: auto;
+  padding-left: 50px;
+}
+.login-link{
+  font-size: 36pt;
+}
+.splash {
+  text-align: center;
+  font-size: 26pt;
+  letter-spacing: 10pt;
+  color: #9F55F7
 }

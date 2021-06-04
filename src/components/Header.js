@@ -16,7 +16,7 @@ function Header({ isLoggedIn }) {
 
             <p className="divider">|</p>
             <Link className="button" to="/items">
-              All Items
+              Items Shop
             </Link>
             <p className="divider">|</p>
             <Link className="button" to="/itemsform">
@@ -26,7 +26,8 @@ function Header({ isLoggedIn }) {
             <Link className="button" to="/login">
               Login
             </Link> 
-
+            <br/>
+            <iframe width="800" height="55" src="https://www.youtube.com/embed/2H5uWRjFsGc?start=9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     )
 }
