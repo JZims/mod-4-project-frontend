@@ -39,10 +39,25 @@ function Adoption () {
     //     )
 
 
+    
+    // useEffect(() => {
+    //     fetch("http://localhost:3000/adoptions")
+    //     .then((r) => r.json())
+    //     .then((adoptions => {
+    //         setAdoptions(adoptions)
+    //     }))
+    // })
+    // const adoptionCards = adoptions.map((adoption) => {
+    //     return <AdoptionCard 
+    //         key={adoption.id}
+    //         adoption={adoption}
+    //     />
+    // })
 
     return (
         <div>
-        {/* {adoptionCards} */}
+           <h2>Under Construction!!!  L.O.L.</h2> 
+        <AdoptionCard/>
         </div>
     )
 }

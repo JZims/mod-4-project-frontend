@@ -5,17 +5,21 @@ import { Link } from 'react-router-dom'
 
 function MyPets({userPets, userInfo}) {
     
-  
-    
     const [filteredPets, setFilteredPets] = useState(userPets)
+    
+    console.log(userPets)
 
+    function handleDelete(id) {
+        const updatedPetsArray = userPets.filter((pet) => pet.id !== id);
+        setFilteredPets(updatedPetsArray)
+    }     
 
-    console.log(filteredPets)
-
-    const cardIterator = userPets.map(pet => { 
-       return  <PetCard key={pet.id} showPet={pet}  userPets= {userPets} setFilteredPets={ setFilteredPets }/>
+    const cardIterator = filteredPets.map(pet => { 
+       return  <PetCard key={pet.id} showPet={pet}  userPets= {userPets} handleDelete={ handleDelete }/>
         } 
     )
+
+    
     return (
         <div className="card-container">
             <h1 className="user-name">{userInfo.username}'s MyPets Page</h1>
