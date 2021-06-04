@@ -6,6 +6,7 @@ import Welcome from './Welcome'
 import MyPets from './MyPets'
 import Adoption from './Adoption'
 import Shop from './Shop'
+import ItemForm from './ItemForm'
 
 function App() {
 
@@ -58,6 +59,9 @@ function App() {
         </Route>
         <Route exact path='/items'>
           <Shop />
+        </Route>
+        <Route exact path='/itemsform'>
+          <ItemForm />
         </Route>
      </Switch>
             
