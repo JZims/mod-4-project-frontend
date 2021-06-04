@@ -9,7 +9,7 @@ function Header({ isLoggedIn }) {
 
     return (
         <div>
-            <p>Header Page</p>
+            {/* { isLoggedIn == true ? <p>Header Page have links</p> :  <p> Header Page no have links </p> } */}
         </div>
     )
 }
